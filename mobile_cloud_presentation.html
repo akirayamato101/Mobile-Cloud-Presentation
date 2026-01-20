@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile & Cloud Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            width: 960px;
+            height: 720px;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px 50px 70px 50px;
+            display: none;
+            flex-direction: column;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        .slide::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .slide::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .slide::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+        
+        .slide::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        .slide h2 {
+            color: #764ba2;
+            font-size: 22px;
+            margin-bottom: 12px;
+            margin-top: 15px;
+        }
+
+        .slide h3 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        .slide p {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .slide ul {
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .slide li {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+        
+        .slide ol {
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .slide ol li {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .slide strong {
+            color: #667eea;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .controls button {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .controls button:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+
+        .controls button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .intro-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .intro-slide h1 {
+            border: none;
+            font-size: 48px;
+        }
+
+        .content-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 8px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1 -->
+        <div class="slide active intro-slide">
+            <h1>Mobile & Cloud Architecture</h1>
+            <p style="font-size: 24px; color: #666; margin-top: 20px;">A Simple Guide to Modern Technology Platforms</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h1>What We'll Cover Today</h1>
+            <p>We'll explore five important technology concepts that power modern apps and services:</p>
+            <ul>
+                <li>Android Architecture</li>
+                <li>iOS Architecture</li>
+                <li>Edge Computing</li>
+                <li>Serverless Platforms</li>
+                <li>IoT Platforms</li>
+            </ul>
+            <p style="margin-top: 30px;">These technologies work together to create the digital experiences we use every day.</p>
+            <div class="slide-number">2</div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h1>Android Architecture - Overview</h1>
+            <h2>What is Android?</h2>
+            <p>Android is an operating system that runs on billions of smartphones, tablets, and other devices worldwide. Think of it as the foundation that makes your phone work.</p>
+            <h2>The Layer Approach</h2>
+            <p>Android is built in layers, like a cake. Each layer has a specific job and works with the layers above and below it.</p>
+            <div class="slide-number">3</div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <h1>Android Architecture - Foundation Layers</h1>
+            <div class="content-box">
+                <h3>Layer 1: Linux Kernel (The Foundation)</h3>
+                <ul>
+                    <li>The bottom layer that talks directly to your phone's hardware</li>
+                    <li>Manages battery, memory, screen, camera, and other physical components</li>
+                    <li>Handles security and keeps different apps separated</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Layer 2: Hardware Abstraction Layer (HAL)</h3>
+                <ul>
+                    <li>Acts as a translator between Android and different phone manufacturers</li>
+                    <li>Allows Android to work on Samsung, Google Pixel, and other brands</li>
+                    <li>Makes it easier for developers to write apps that work on any Android device</li>
+                </ul>
+            </div>
+            <div class="slide-number">4</div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <h1>Android Architecture - Upper Layers</h1>
+            <div class="content-box">
+                <h3>Layer 3: Android Runtime and Libraries</h3>
+                <ul>
+                    <li>Contains pre-written code that apps can use</li>
+                    <li>Includes tools for graphics, databases, web browsing, and more</li>
+                    <li>The Android Runtime runs your apps and manages memory efficiently</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Layer 4: Application Framework</h3>
+                <ul>
+                    <li>Provides ready-made components for app developers</li>
+                    <li>Includes things like notification systems, location services, and content sharing</li>
+                    <li>Saves developers from reinventing the wheel for common features</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Layer 5: Applications</h3>
+                <p>The apps you actually see and use: Gmail, Chrome, Camera, etc.</p>
+            </div>
+            <div class="slide-number">5</div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide">
+            <h1>iOS Architecture - Overview</h1>
+            <h2>What is iOS?</h2>
+            <p>iOS is Apple's operating system that runs exclusively on iPhones and iPads. It's known for smooth performance and tight integration with Apple hardware.</p>
+            <h2>The Layered Design</h2>
+            <p>Like Android, iOS uses a layered architecture. However, iOS is designed specifically for Apple devices, allowing deeper optimization.</p>
+            <div class="slide-number">6</div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide">
+            <h1>iOS Architecture - Foundation Layers</h1>
+            <div class="content-box">
+                <h3>Layer 1: Core OS Layer (The Foundation)</h3>
+                <ul>
+                    <li>Directly manages iPhone hardware like processor, memory, and storage</li>
+                    <li>Handles security, file systems, and low-level networking</li>
+                    <li>Similar to Android's Linux kernel but optimized for Apple chips</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Layer 2: Core Services Layer</h3>
+                <ul>
+                    <li>Provides fundamental services like iCloud, location services, and databases</li>
+                    <li>Manages networking, file handling, and data storage</li>
+                    <li>Includes frameworks for security and privacy features</li>
+                </ul>
+            </div>
+            <div class="slide-number">7</div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide">
+            <h1>iOS Architecture - Upper Layers</h1>
+            <div class="content-box">
+                <h3>Layer 3: Media Layer</h3>
+                <ul>
+                    <li>Handles all graphics, audio, and video</li>
+                    <li>Powers animations, image processing, and gaming graphics</li>
+                    <li>Includes technologies like Metal (for high-performance graphics) and Core Audio</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Layer 4: Cocoa Touch Layer</h3>
+                <ul>
+                    <li>The top layer that app developers work with most</li>
+                    <li>Provides user interface components like buttons, sliders, and gestures</li>
+                    <li>Includes features like multitasking, notifications, and app extensions</li>
+                    <li>Makes apps feel smooth and responsive</li>
+                </ul>
+            </div>
+            <div class="slide-number">8</div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="slide">
+            <h1>Android vs iOS Architecture</h1>
+            <h2>Key Differences</h2>
+            <div class="two-column">
+                <div class="content-box">
+                    <h3>Android</h3>
+                    <ul>
+                        <li>Open source and runs on many device types</li>
+                        <li>More flexibility for customization</li>
+                        <li>Works with hardware from hundreds of manufacturers</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>iOS</h3>
+                    <ul>
+                        <li>Closed system designed for Apple devices only</li>
+                        <li>Tighter hardware-software integration</li>
+                        <li>Consistent experience across all Apple devices</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 30px;"><strong>Both approaches have advantages and create reliable, powerful mobile experiences.</strong></p>
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="slide">
+            <h1>Edge Computing - What Is It?</h1>
+            <h2>The Traditional Way: Cloud Computing</h2>
+            <p>Traditionally, when your phone needs to process data, it sends it to distant data centers (the cloud), which process it and send results back. This can take time.</p>
+            <h2>The New Way: Edge Computing</h2>
+            <p>Edge computing brings the processing power closer to where the data is created. Instead of traveling thousands of miles to a data center, your data is processed nearby.</p>
+            <p style="margin-top: 20px;"><strong>Think of it like:</strong> having a small convenience store in your neighborhood versus driving to a big supermarket in another town.</p>
+            <div class="slide-number">10</div>
+        </div>
+
+        <!-- Slide 11 -->
+        <div class="slide">
+            <h1>Edge Computing - How It Works</h1>
+            <h2>Where Is "The Edge"?</h2>
+            <p>The edge refers to devices and servers located physically closer to users:</p>
+            <ul>
+                <li>Cell phone towers with processing capabilities</li>
+                <li>Local servers in stores or buildings</li>
+                <li>Smart devices themselves (like security cameras with AI built-in)</li>
+                <li>Regional mini data centers</li>
+            </ul>
+            <h2>The Process</h2>
+            <ol>
+                <li>Your device creates data (like a video from a security camera)</li>
+                <li>Instead of sending it far away, it's processed at a nearby edge server</li>
+                <li>Only important results are sent to the main cloud</li>
+                <li>You get faster responses and use less bandwidth</li>
+            </ol>
+            <div class="slide-number">11</div>
+        </div>
+
+        <!-- Slide 12 -->
+        <div class="slide">
+            <h1>Edge Computing - Benefits</h1>
+            <h2>Why Use Edge Computing?</h2>
+            <ul>
+                <li><strong>Speed:</strong> Processing happens nearby, so responses are lightning-fast (important for self-driving cars or surgery robots)</li>
+                <li><strong>Bandwidth Savings:</strong> Less data traveling across the internet means lower costs and less network congestion</li>
+                <li><strong>Reliability:</strong> Works even if connection to the main cloud is slow or interrupted</li>
+                <li><strong>Privacy:</strong> Sensitive data can be processed locally without leaving your location</li>
+            </ul>
+            <div class="content-box" style="margin-top: 20px;">
+                <h3>Real-World Examples</h3>
+                <p>Smart traffic lights, retail store analytics, industrial sensors, augmented reality apps</p>
+            </div>
+            <div class="slide-number">12</div>
+        </div>
+
+        <!-- Slide 13 -->
+        <div class="slide">
+            <h1>Serverless Platforms - Overview</h1>
+            <h2>What Does "Serverless" Mean?</h2>
+            <p><strong>A Confusing Name:</strong> Despite the name, serverless platforms DO use servers. The term means developers don't have to worry about managing those servers.</p>
+            <div class="two-column" style="margin-top: 20px;">
+                <div class="content-box">
+                    <h3>The Traditional Way</h3>
+                    <p>Before serverless, developers had to:</p>
+                    <ul style="font-size: 16px;">
+                        <li>Buy or rent servers</li>
+                        <li>Install and update software</li>
+                        <li>Monitor server health 24/7</li>
+                        <li>Scale up when traffic increases</li>
+                        <li>Pay for servers even when not being used</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>The Serverless Way</h3>
+                    <p>Developers just write code. The platform automatically handles everything else.</p>
+                </div>
+            </div>
+            <div class="slide-number">13</div>
+        </div>
+
+        <!-- Slide 14 -->
+        <div class="slide">
+            <h1>Serverless Platforms - How They Work</h1>
+            <h2>The Function Approach</h2>
+            <p>Instead of running a whole application on a server all the time, you break your application into small functions that run only when needed.</p>
+            <h2>The Process</h2>
+            <ol>
+                <li>You write a function (like "process a payment" or "resize an image")</li>
+                <li>You upload it to a serverless platform like AWS Lambda, Google Cloud Functions, or Azure Functions</li>
+                <li>The function sits idle, costing you nothing</li>
+                <li>When someone triggers it (like uploading a photo), the platform instantly runs your function</li>
+                <li>After finishing, it shuts down again</li>
+                <li>You only pay for the exact time it ran</li>
+            </ol>
+            <div class="slide-number">14</div>
+        </div>
+
+        <!-- Slide 15 -->
+        <div class="slide">
+            <h1>Serverless Platforms - Benefits</h1>
+            <h2>Key Advantages</h2>
+            <ul>
+                <li><strong>Pay Only For What You Use:</strong> If your function runs for 200 milliseconds, you pay for 200 milliseconds</li>
+                <li><strong>Automatic Scaling:</strong> If 1 person or 1 million people use your app, the platform handles it automatically</li>
+                <li><strong>No Server Management:</strong> No updates, no security patches, no maintenance headaches</li>
+                <li><strong>Faster Development:</strong> Focus on writing code, not managing infrastructure</li>
+            </ul>
+            <div class="content-box" style="margin-top: 20px;">
+                <h3>Great For</h3>
+                <p>Image processing, data transformation, chatbots, scheduled tasks, APIs, and event-driven applications</p>
+            </div>
+            <div class="slide-number">15</div>
+        </div>
+
+        <!-- Slide 16 -->
+        <div class="slide">
+            <h1>IoT Platforms - What Is IoT?</h1>
+            <h2>IoT = Internet of Things</h2>
+            <p>IoT refers to everyday objects connected to the internet that can send and receive data.</p>
+            <h2>Examples All Around Us</h2>
+            <ul>
+                <li>Smart home devices (thermostats, light bulbs, door locks)</li>
+                <li>Fitness trackers and smartwatches</li>
+                <li>Connected cars</li>
+                <li>Industrial sensors in factories</li>
+                <li>Smart agriculture sensors in farms</li>
+                <li>Medical monitoring devices</li>
+            </ul>
+            <p style="margin-top: 20px;">These devices create massive amounts of data that need to be collected, processed, and acted upon.</p>
+            <div class="slide-number">16</div>
+        </div>
+
+        <!-- Slide 17 -->
+        <div class="slide">
+            <h1>IoT Platforms - What They Do</h1>
+            <h2>The Challenge</h2>
+            <p>Imagine managing thousands or millions of connected devices, each sending data constantly. How do you organize this chaos?</p>
+            <h2>What an IoT Platform Provides</h2>
+            <ul>
+                <li><strong>Device Management:</strong> Register, monitor, and update all your connected devices from one place</li>
+                <li><strong>Data Collection:</strong> Gather data from all devices reliably, even with poor internet connections</li>
+                <li><strong>Data Processing:</strong> Analyze the incoming data to find useful insights</li>
+                <li><strong>Security:</strong> Protect devices from hackers and ensure data privacy</li>
+                <li><strong>Integration:</strong> Connect IoT data to other systems and applications</li>
+            </ul>
+            <div class="slide-number">17</div>
+        </div>
+
+        <!-- Slide 18 -->
+        <div class="slide">
+            <h1>IoT Platforms - Key Components</h1>
+            <ul>
+                <li><strong>Connectivity Layer:</strong> Handles communication between devices and the platform (WiFi, Bluetooth, cellular, etc.)</li>
+                <li><strong>Device Management:</strong> Monitors device health, sends updates, and manages device lifecycles</li>
+                <li><strong>Data Processing Engine:</strong> Processes and analyzes incoming data streams in real-time</li>
+                <li><strong>Application Layer:</strong> Where you build apps and dashboards to visualize and use the data</li>
+                <li><strong>Security Layer:</strong> Encrypts data, authenticates devices, and prevents unauthorized access</li>
+            </ul>
+            <div class="content-box" style="margin-top: 20px;">
+                <h3>Popular Platforms</h3>
+                <p>AWS IoT, Google Cloud IoT, Microsoft Azure IoT, Arduino Cloud</p>
+            </div>
+            <div class="slide-number">18</div>
+        </div>
+
+        <!-- Slide 19 -->
+        <div class="slide">
+            <h1>IoT Platforms - Real-World Examples</h1>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 16px;">
+                <div class="content-box">
+                    <h3>Smart Home</h3>
+                    <p>Your thermostat learns your schedule and adjusts temperature automatically. The IoT platform collects data from temperature sensors and sends commands to your HVAC system.</p>
+                </div>
+                <div class="content-box">
+                    <h3>Smart Factory</h3>
+                    <p>Sensors on machines predict when maintenance is needed. The platform analyzes vibration and temperature data to prevent breakdowns.</p>
+                </div>
+                <div class="content-box">
+                    <h3>Smart Agriculture</h3>
+                    <p>Soil moisture sensors tell farmers exactly when to water crops. The platform processes data from hundreds of sensors across large farms.</p>
+                </div>
+                <div class="content-box">
+                    <h3>Healthcare</h3>
+                    <p>Wearable devices monitor patient vital signs. The platform alerts doctors if readings become concerning.</p>
+                </div>
+            </div>
+            <div class="slide-number">19</div>
+        </div>
+
+        <!-- Slide 20 -->
+        <div class="slide">
+            <h1>How These Technologies Work Together</h1>
+            <h2>A Real-World Scenario: Smart City Traffic System</h2>
+            <ul>
+                <li><strong>IoT Platform:</strong> Collects data from traffic cameras and sensors at intersections</li>
+                <li><strong>Edge Computing:</strong> Processes video feeds locally at each intersection to count cars and detect accidents</li>
+                <li><strong>Serverless Functions:</strong> Trigger alerts to emergency services when accidents are detected</li>
+                <li><strong>Mobile Apps (Android/iOS):</strong> Display real-time traffic conditions to drivers and suggest alternate routes</li>
+            </ul>
+            <p style="margin-top: 30px; font-size: 20px; color: #667eea;"><strong>All these technologies complement each other to create intelligent, responsive systems.</strong></p>
+            <div class="slide-number">20</div>
+        </div>
+
+        <!-- Slide 21 -->
+        <div class="slide">
+            <h1>Another Example - Food Delivery App</h1>
+            <ul>
+                <li><strong>Android/iOS Architecture:</strong> Provides the mobile app interface for customers and delivery drivers</li>
+                <li><strong>IoT Platform:</strong> Tracks delivery vehicle locations and monitors food temperature in smart containers</li>
+                <li><strong>Edge Computing:</strong> Processes location data quickly to provide real-time driver positions</li>
+                <li><strong>Serverless Platform:</strong> Handles payment processing, order matching, and notification sending without maintaining expensive servers running 24/7</li>
+            </ul>
+            <p style="margin-top: 40px; font-size: 20px; color: #764ba2;"><strong>This combination creates a seamless experience from order to delivery.</strong></p>
+            <div class="slide-number">21</div>
+        </div>
+
+        <!-- Slide 22 -->
+        <div class="slide">
+            <h1>Key Takeaways</h1>
+            <h2>What We've Learned</h2>
+            <ul>
+                <li><strong>Mobile Architectures:</strong> Android and iOS use layered designs to manage hardware and provide features to apps</li>
+                <li><strong>Edge Computing:</strong> Brings processing closer to users for faster, more efficient operations</li>
+                <li><strong>Serverless Platforms:</strong> Let developers focus on code while the platform handles infrastructure automatically</li>
+                <li><strong>IoT Platforms:</strong> Manage millions of connected devices and make sense of their data</li>
+                <li><strong>Together:</strong> These technologies create the smart, responsive digital world we experience today</li>
+            </ul>
+            <div class="slide-number">22</div>
+        </div>
+
+        <!-- Slide 23 -->
+        <div class="slide">
+            <h1>The Future</h1>
+            <h2>Where We're Heading</h2>
+            <p>These technologies continue to evolve and converge:</p>
+            <ul>
+                <li>Edge computing will become smarter with built-in AI</li>
+                <li>Serverless platforms will handle more complex workloads</li>
+                <li>IoT will connect billions more devices</li>
+                <li>Mobile platforms will become even more powerful and efficient</li>
+            </ul>
+            <p style="margin-top: 40px; font-size: 20px;"><strong>Understanding these foundations helps us prepare for and shape the future of technology.</strong></p>
+            <div class="slide-number">23</div>
+        </div>
+
+        <!-- Slide 24 -->
+        <div class="slide intro-slide">
+            <h1>Questions?</h1>
+            <p style="font-size: 20px; margin-top: 30px;">Thank you for your attention!</p>
+            <p style="margin-top: 20px;">These concepts form the backbone of modern technology. Whether you're a developer, business person, or curious learner, understanding these architectures helps you make better decisions about technology.</p>
+            <p style="margin-top: 30px; color: #667eea; font-weight: bold;">Feel free to ask questions or explore any of these topics in more depth!</p>
+            <div class="slide-number">24</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)">◀</button>
+        <button id="nextBtn" onclick="changeSlide(1)">▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
