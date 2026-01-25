@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal's Annotations on Morga's Sucesos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            display: none;
+            flex: 1;
+            padding: 50px 80px;
+            background: white;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 20px;
+            right: 40px;
+            color: #999;
+            font-size: 14px;
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #e67e22;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #2c3e50;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+
+        li {
+            color: #2c3e50;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        .quote {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 20px 25px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #34495e;
+            font-size: 17px;
+            line-height: 1.6;
+            border-radius: 3px;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        button:hover:not(:disabled) {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px !important;
+        }
+
+        .title-slide h1 {
+            color: white;
+            font-size: 42px;
+            max-width: 900px;
+            margin-bottom: 25px;
+        }
+
+        .title-slide .subtitle {
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+        }
+        
+        .title-slide .slide-number {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        strong {
+            color: #e67e22;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>Jose Rizal's Annotations on Antonio de Morga's<br>"Sucesos de las Islas Filipinas"</h1>
+            <p class="subtitle">Reclaiming Philippine History Through Critical Commentary</p>
+            <div class="slide-number">1 / 8</div>
+        </div>
+
+        <!-- Slide 2: Introduction -->
+        <div class="slide">
+            <h2>Introduction</h2>
+            <p>In 1890, Jose Rizal annotated and republished Antonio de Morga's historical account "Sucesos de las Islas Filipinas" (Events in the Philippine Islands), originally published in 1609.</p>
+            <p>This scholarly work became one of Rizal's most important contributions to Philippine historiography, challenging colonial narratives and reclaiming pre-colonial Filipino identity.</p>
+            <div class="slide-number">2 / 8</div>
+        </div>
+
+        <!-- Slide 3: Who Was Antonio de Morga? -->
+        <div class="slide">
+            <h2>Who Was Antonio de Morga?</h2>
+            <ul>
+                <li><strong>Spanish lawyer and colonial official</strong> who served in the Philippines from 1595-1603</li>
+                <li>Held positions as Lieutenant Governor-General and judge of the Royal Audiencia</li>
+                <li>Wrote "Sucesos de las Islas Filipinas" in 1609, providing an eyewitness account of Philippine affairs</li>
+                <li>His work covered Philippine history, culture, Spanish colonization, and interactions with neighboring Asian countries</li>
+            </ul>
+            <div class="slide-number">3 / 8</div>
+        </div>
+
+        <!-- Slide 4: Rizal's Choice of Morga -->
+        <div class="slide">
+            <h2>Why Rizal Chose Morga's Work</h2>
+            <h3>1. Objective Historical Account</h3>
+            <p>Unlike friar-written histories, Morga was a secular official whose account was more factual and less biased by religious motives.</p>
+            
+            <h3>2. Evidence of Pre-Colonial Civilization</h3>
+            <p>Morga's work contained descriptions of advanced Filipino culture, trade, and governance before Spanish colonization.</p>
+            <div class="slide-number">4 / 8</div>
+        </div>
+
+        <!-- Slide 5: More Reasons -->
+        <div class="slide">
+            <h2>Why Rizal Chose Morga's Work (continued)</h2>
+            <h3>3. Counter-Narrative Tool</h3>
+            <p>Rizal used Morga's own words to challenge Spanish claims that they "civilized" barbaric Filipinos.</p>
+            
+            <h3>4. Scholarly Credibility</h3>
+            <p>As a Spanish official's account, it carried authority that would be difficult for colonial critics to dismiss.</p>
+            
+            <h3>5. Awakening National Consciousness</h3>
+            <p>By showcasing Filipino achievements before colonization, Rizal aimed to inspire pride and national identity.</p>
+            <div class="slide-number">5 / 8</div>
+        </div>
+
+        <!-- Slide 6: Excerpts from Morga -->
+        <div class="slide">
+            <h2>Excerpts from Morga's Work</h2>
+            <div class="quote">
+                "The natives of these islands were well-built and of good disposition... They had their own system of writing and letters."
+            </div>
+            <div class="quote">
+                "They carried on considerable trade with China, Japan, Siam, Malacca, and the Moluccas, exchanging gold, wax, pearls, and other products."
+            </div>
+            <p>These passages demonstrated that Filipinos had established culture, literacy, and international commerce before Spanish arrival.</p>
+            <div class="slide-number">6 / 8</div>
+        </div>
+
+        <!-- Slide 7: Rizal's Annotations -->
+        <div class="slide">
+            <h2>Examples of Rizal's Annotations</h2>
+            <p><strong>On Spanish "Civilization":</strong></p>
+            <div class="quote">
+                "The Spaniards found the Filipinos already civilized. The Filipino had his own laws, literature, and system of government. He was not the savage that the friars depicted."
+            </div>
+            
+            <p><strong>On Filipino Capability:</strong></p>
+            <div class="quote">
+                "The Filipino of today is no less capable than his ancestors. What he needs is not foreign guardianship but the opportunity to develop his abilities."
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+
+        <!-- Slide 8: Significance -->
+        <div class="slide">
+            <h2>Historical Significance</h2>
+            <ul>
+                <li><strong>Intellectual Resistance:</strong> Rizal's annotations were a scholarly form of resistance against colonial propaganda</li>
+                <li><strong>Source of Pride:</strong> Revealed a dignified Filipino past, countering inferiority complexes imposed by colonizers</li>
+                <li><strong>Methodological Innovation:</strong> Pioneered Filipino historical scholarship using primary sources</li>
+                <li><strong>Inspiration for Nationalism:</strong> Strengthened the foundation for Philippine independence movement</li>
+                <li><strong>Enduring Legacy:</strong> Remains essential reading for understanding Philippine history and identity</li>
+            </ul>
+            <div class="slide-number">8 / 8</div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">‹</button>
+            <button id="nextBtn" onclick="changeSlide(1)">›</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            // Hide all slides first
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+            
+            // Show only the current slide
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].style.display = 'block';
+            
+            // Update buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) changeSlide(-1);
+            if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) changeSlide(1);
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
